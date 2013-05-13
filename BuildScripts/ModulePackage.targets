@@ -121,7 +121,7 @@
     
     
     <Zip Files="@(OutputContent)" WorkingDirectory="$(MSBuildProjectDirectory)\Package" ZipFileName="$(PackageName)_$(Version)_Install.zip" />
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\$(PackageName)_$(Version)_Install.zip" DestinationFolder="packages/" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\$(PackageName)_$(Version)_Install.zip" DestinationFolder="install/" />
 
     <!-- Clean up Files -->
     <RemoveDir Directories ="$(MSBuildProjectDirectory)\Package" />
@@ -147,7 +147,7 @@
     </CreateItem>
 
     <Zip Files="@(OutputSource)" WorkingDirectory="$(MSBuildProjectDirectory)\Package" ZipFileName="$(PackageName)_$(Version)_Source.zip" />
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\$(PackageName)_$(Version)_Source.zip" DestinationFolder="packages/" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\$(PackageName)_$(Version)_Source.zip" DestinationFolder="install/" />
 
     <!-- Clean up Files -->
     <RemoveDir Directories ="$(MSBuildProjectDirectory)\Package" />
