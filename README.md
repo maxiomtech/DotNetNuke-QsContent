@@ -9,7 +9,7 @@ Allows you to show/hide content based on querystring values.
 * Go to configuration
 * Enter a key/value pair of a querystring. These can be comma delimited and may contain regular expressions.
 * Select the module you want the querystring values to effect.
-* Select if the default is to hide the module or show the module based on the querystring key/value match.
+* Select if the default is to hide the module or show the module based on the querystring key/value match. Otherwise module will be hidden if querystring does not match.
 
 The content is hidden by using the .DnnModule-X class. So be aware that the toggling of content is merely for cosmetic reasons and not for security.
 
