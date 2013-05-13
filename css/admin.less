@@ -1,0 +1,39 @@
+.headerTitle {
+    font-weight: bold;
+
+    div {
+        width: 200px;
+        display: inline-block;
+    }
+}
+
+.addMenu {
+    @inputWidth: 420px;
+    @inputHeight: 24px;
+    @inputColor: #4F4F4F;
+    @inputFontSize: 18px;
+
+    label {
+        display: block;
+        font-weight: bold;
+        font-size: @inputFontSize;
+        margin-bottom: 8px;
+    }
+
+    input {
+        width: @inputWidth;
+        height: @inputHeight;
+        font-size: @inputFontSize;
+        color: @inputColor;
+    }
+
+    select {
+        width: @inputWidth;
+        height: @inputHeight;
+        color: @inputColor;
+    }
+
+    div.subText {
+        font-size:11px;
+    }
+}

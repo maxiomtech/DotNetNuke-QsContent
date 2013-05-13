@@ -1,0 +1,100 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path />
+      <name>Admin.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>Admin.ascx.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>Admin.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>Main.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>Main.ascx.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>Main.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>QSContent.csproj</name>
+    </file>
+    <file>
+      <path />
+      <name>QSContent.sln</name>
+    </file>
+    <file>
+      <path />
+      <name>Settings.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>Settings.ascx.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>Settings.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>Uninstall.SqlDataProvider</name>
+    </file>
+    <file>
+      <path />
+      <name>version.txt</name>
+    </file>
+    <file>
+      <path>BuildScripts/</path>
+      <name>ModulePackage.targets</name>
+    </file>
+    <file>
+      <path>BuildScripts/</path>
+      <name>MSBuild.Community.Tasks.Targets</name>
+    </file>
+    <file>
+      <path>Components/Common/</path>
+      <name>Constants.cs</name>
+    </file>
+    <file>
+      <path>Components/Controller/</path>
+      <name>DataController.cs</name>
+    </file>
+    <file>
+      <path>Components/Entities/</path>
+      <name>CheckInfo.cs</name>
+    </file>
+    <file>
+      <path>Components/Entities/</path>
+      <name>ValidateCheckInfo.cs</name>
+    </file>
+    <file>
+      <path>Documentation/</path>
+      <name>License.htm</name>
+    </file>
+    <file>
+      <path>Documentation/</path>
+      <name>ReleaseNotes.htm</name>
+    </file>
+    <file>
+      <path>js/</path>
+      <name>qsContent.js</name>
+    </file>
+    <file>
+      <path>Properties/</path>
+      <name>AssemblyInfo.cs</name>
+    </file>
+    <file>
+      <path>Providers/Data/</path>
+      <name>01.00.00.SqlDataProvider</name>
+    </file>
+  </files>
+</dotnetnuke>

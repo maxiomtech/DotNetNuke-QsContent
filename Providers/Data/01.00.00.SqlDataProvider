@@ -1,0 +1,61 @@
+﻿IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}InspectorIT_QSContent_Checks]') AND type in (N'U'))
+begin
+	CREATE TABLE {databaseOwner}[{objectQualifier}InspectorIT_QSContent_Checks](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[ModuleID] [int] NOT NULL,
+	[Querystring] [nvarchar](200) NOT NULL,
+	[HideMatch] bit,
+	[CheckModuleID] [int] NOT NULL,
+	[CreatedOnDate] [datetime] NULL DEFAULT (getdate()),
+	[CreatedByUserID] [int] NULL,
+	 CONSTRAINT [PK_InspectorIT_QSContent_Checks] PRIMARY KEY CLUSTERED 
+	(
+		[ID] ASC
+	)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+	) ON [PRIMARY]
+end
+
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}InspectorIT_QSContent_AddCheck]') AND type in (N'P', N'PC'))
+begin
+
+	exec('CREATE procedure {databaseOwner}[{objectQualifier}InspectorIT_QSContent_AddCheck]
+	@ModuleID int,
+	@Querystring nvarchar(200),
+	@HideMatch bit,
+	@CheckModuleID int,
+	@CreatedByUserID int
+	as
+
+	insert into {databaseOwner}{objectQualifier}InspectorIT_QSContent_Checks (moduleId,querystring,HideMatch,checkmoduleid,createdByUserId) values (@ModuleID,@querystring,@HideMatch,@checkmoduleid,@createdByUserId)')
+
+end
+
+GO
+
+
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}InspectorIT_QSContent_DeleteCheck]') AND type in (N'P', N'PC'))
+begin
+	exec('CREATE procedure {databaseOwner}[{objectQualifier}InspectorIT_QSContent_DeleteCheck]
+	@ID int
+	as
+
+	delete from {databaseOwner}{objectQualifier}InspectorIT_QSContent_Checks where ID=@ID')
+
+end
+
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}InspectorIT_QSContent_GetChecks]') AND type in (N'P', N'PC'))
+begin
+	exec('CREATE procedure {databaseOwner}[{objectQualifier}InspectorIT_QSContent_GetChecks]
+	@moduleId int
+	as
+
+	select * from {databaseOwner}{objectQualifier}InspectorIT_QSContent_Checks where moduleId=@moduleId')
+end
+
+GO
+
+
