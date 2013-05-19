@@ -14,9 +14,9 @@ Allows you to show/hide content based on querystring values.
 The content is hidden by using the .DnnModule-X class. So be aware that the toggling of content is merely for cosmetic reasons and not for security.
 
 ### Roadmap
-* Allow for server side hide/show of content.
-* Allow users to edit items. (just haven't gotten around to it yet)
-* Make admin pretty.
+* <del>Allow for server side hide/show of content</del> Done 5/19/2013.
+* <del>Allow users to edit items. (just haven't gotten around to it yet</del> DOne 5/19/2013
+* <del>Make admin pretty.</del> Done 5/19/2013
 * Show stats when logged in.
 
 ### Requirements
@@ -24,4 +24,4 @@ The content is hidden by using the .DnnModule-X class. So be aware that the togg
 
 ### Screenshot
 
-![ScreenShot](https://dl.dropboxusercontent.com/u/10620012/DotNetNuke-Qscontent.png)
+![ScreenShot](https://dl.dropboxusercontent.com/u/10620012/Qscontent-v2.png)
