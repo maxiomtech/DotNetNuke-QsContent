@@ -15,7 +15,7 @@ The content is hidden by using the .DnnModule-X class. So be aware that the togg
 
 ### Roadmap
 * <del>Allow for server side hide/show of content</del> Done 5/19/2013.
-* <del>Allow users to edit items. (just haven't gotten around to it yet</del> DOne 5/19/2013
+* <del>Allow users to edit items. (just haven't gotten around to it yet</del> Done 5/19/2013
 * <del>Make admin pretty.</del> Done 5/19/2013
 * Show stats when logged in.
 
