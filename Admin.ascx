@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Admin.ascx.cs" Inherits="InspectorIT.QSContent.Admin" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
-<dnn:DnnCssInclude ID="DnnCssInclude1" runat="server" FilePath="~/DesktopModules/InspectorIT/QSContent/css/admin.css"></dnn:DnnCssInclude>
-
+<dnn:DnnCssInclude ID="DnnCssInclude1" runat="server" FilePath="~/DesktopModules/InspectorIT/QSContent/css/admin.min.css"></dnn:DnnCssInclude>
 <dnn:DnnJsInclude ID="AngularJS" runat="server" FilePath="~/DesktopModules/InspectorIT/qsContent/js/angular.min.js" />
 <dnn:DnnJsInclude ID="qsAdmin" runat="server" FilePath="~/DesktopModules/InspectorIT/qsContent/js/Admin.js" />
 

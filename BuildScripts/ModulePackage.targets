@@ -74,6 +74,8 @@
       <DefaultExclude Include="**\*.zip" />
       <DefaultExclude Include="**\*ReSharper.*\**" />
       <DefaultExclude Include="**\Tests*\**" />
+      <DefaultExclude Include="**\packages\**" />
+      <DefaultExclude Include="**\install\**" />
       <DefaultExclude Include="**\*.dnn" />
     </ItemGroup>
 
@@ -81,7 +83,7 @@
     <ItemGroup>
       <InstallInclude Include="**\*.ascx" Exclude="@(DefaultExclude)" />
       <InstallInclude Include="**\*.asmx" Exclude="@(DefaultExclude)" />
-      <InstallInclude Include="**\*.css" Exclude="@(DefaultExclude)" />
+      <InstallInclude Include="**\*.min.css" Exclude="@(DefaultExclude)" />
       <InstallInclude Include="**\*.html" Exclude="@(DefaultExclude)" />
       <InstallInclude Include="**\*.htm" Exclude="@(DefaultExclude)" />
       <InstallInclude Include="**\*.resx" Exclude="@(DefaultExclude)" />
