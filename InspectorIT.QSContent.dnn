@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <dotnetnuke type="Package" version="5.0">
   <packages>
-    <package name="InspectorIT.QSContent" type="Module" version="1.0.2.0">
+    <package name="InspectorIT.QSContent" type="Module" version="1.0.7.0">
       <friendlyName>QS Content</friendlyName>
       <description>Allows you to show/hide content based on querystring values.</description>
       <iconFile>DesktopModules/InspectorIT/QsContent/images/icon.png</iconFile>
