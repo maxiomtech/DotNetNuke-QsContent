@@ -55,5 +55,11 @@ namespace InspectorIT.QSContent.Components.Entities
         /// </summary>
         /// <value>The created by user ID.</value>
         public int CreatedByUserID { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [server side check].
+        /// </summary>
+        /// <value><c>true</c> if [server side check]; otherwise, <c>false</c>.</value>
+        public bool ServerSide { get; set; }
     }
 }

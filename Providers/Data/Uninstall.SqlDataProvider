@@ -1,0 +1,28 @@
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}InspectorIT_QSContent_AddCheck]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}InspectorIT_QSContent_AddCheck]
+
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}InspectorIT_QSContent_DeleteCheck]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}InspectorIT_QSContent_DeleteCheck]
+
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}InspectorIT_QSContent_GetChecks]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}InspectorIT_QSContent_GetChecks]
+
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}InspectorIT_QSContent_UpdateCheck]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}InspectorIT_QSContent_UpdateCheck]
+
+GO
+
+
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}InspectorIT_QSContent_Checks]') AND type in (N'U'))
+DROP TABLE {databaseOwner}[{objectQualifier}InspectorIT_QSContent_Checks]
+
+GO
+
+

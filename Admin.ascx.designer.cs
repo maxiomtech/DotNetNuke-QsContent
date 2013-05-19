@@ -22,48 +22,21 @@ namespace InspectorIT.QSContent {
         protected global::DotNetNuke.Web.Client.ClientResourceManagement.DnnCssInclude DnnCssInclude1;
         
         /// <summary>
-        /// txtQuerystring control.
+        /// AngularJS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQuerystring;
+        protected global::DotNetNuke.Web.Client.ClientResourceManagement.DnnJsInclude AngularJS;
         
         /// <summary>
-        /// ddlModules control.
+        /// qsAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlModules;
-        
-        /// <summary>
-        /// cbHideMatch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbHideMatch;
-        
-        /// <summary>
-        /// btnAdd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAdd;
-        
-        /// <summary>
-        /// rptModules control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptModules;
+        protected global::DotNetNuke.Web.Client.ClientResourceManagement.DnnJsInclude qsAdmin;
     }
 }

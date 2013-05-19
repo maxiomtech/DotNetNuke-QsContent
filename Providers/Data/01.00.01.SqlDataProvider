@@ -1,0 +1,41 @@
+﻿IF NOT EXISTS (select 1 from information_schema.columns where column_name ='ServerSide' and table_name='{objectQualifier}InspectorIT_QSContent_Checks')
+BEGIN
+	alter table {databaseOwner}{objectQualifier}InspectorIT_QSContent_Checks
+	ADD ServerSide bit
+END
+Go
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}InspectorIT_QSContent_AddCheck]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}InspectorIT_QSContent_AddCheck]
+
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}InspectorIT_QSContent_UpdateCheck]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}InspectorIT_QSContent_UpdateCheck]
+
+GO
+
+
+Create procedure {databaseOwner}[{objectQualifier}InspectorIT_QSContent_UpdateCheck]
+@ID int,
+@ModuleID int,
+@Querystring nvarchar(200),
+@HideMatch bit,
+@ServerSide bit,
+@CheckModuleID int,
+@CreatedByUserID int
+as
+
+if(@ID > 0)
+begin
+	update {databaseOwner}{objectQualifier}InspectorIT_QSContent_Checks 
+		set Querystring=@Querystring,HideMatch=@HideMatch,ServerSide=@ServerSide,CheckModuleID=@CheckModuleID 
+		where ID=@ID
+end
+else
+begin
+	insert into {databaseOwner}{objectQualifier}InspectorIT_QSContent_Checks (moduleId,querystring,HideMatch,ServerSide,checkmoduleid,createdByUserId) 
+			values (@ModuleID,@querystring,@HideMatch,@ServerSide,@checkmoduleid,@createdByUserId)	
+end
+
+

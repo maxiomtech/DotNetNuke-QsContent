@@ -15,11 +15,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Web.UI;
 using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Modules.Actions;
+using DotNetNuke.Framework;
 using DotNetNuke.Security;
-using InspectorIT.QSContent.Components.Controller;
+using DotNetNuke.UI;
+using DotNetNuke.UI.Skins;
+using DotNetNuke.UI.Skins.Controls;
+using InspectorIT.QSContent.Components.Controllers;
 using InspectorIT.QSContent.Components.Entities;
 
 namespace InspectorIT.QSContent
@@ -29,6 +34,8 @@ namespace InspectorIT.QSContent
     /// </summary>
     public partial class Main : PortalModuleBase, IActionable
     {
+
+
         /// <summary>
         /// Handles the Load event of the Page control.
         /// </summary>
@@ -36,33 +43,79 @@ namespace InspectorIT.QSContent
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         protected void Page_Load(object sender, EventArgs e)
         {
+            List<ValidateCheckInfo> clientSideChecks = new List<ValidateCheckInfo>();
+            List<ValidateCheckInfo> serverSideChecks = new List<ValidateCheckInfo>();
+            List<CheckInfo> checks = DataController.GetChecks(ModuleId);
+            foreach (CheckInfo checkInfo in checks)
+            {
+                foreach (string qsKey in Request.QueryString.Keys.Cast<string>())
+                {
+                    var keyValue = qsKey + "=" + Request.QueryString[qsKey];
+                    foreach (string checkValue in checkInfo.Querystring.Split(','))
+                    {
+                        bool isVisible = keyValue == checkValue || Regex.IsMatch(keyValue, checkValue);
+                        if (isVisible)
+                        {
+                            if (checkInfo.ServerSide)
+                            {
+                                if (!serverSideChecks.Exists(x => x.ModuleID == checkInfo.CheckModuleID && x.Visible))
+                                {
+
+                                    serverSideChecks.Add(new ValidateCheckInfo() {ModuleID = checkInfo.CheckModuleID, Visible = !checkInfo.HideMatch});
+                                }
+                            }
+                            else
+                            {
+                                if (!clientSideChecks.Exists(x => x.ModuleID == checkInfo.CheckModuleID && x.Visible))
+                                {
+                                    clientSideChecks.Add(new ValidateCheckInfo() {ModuleID = checkInfo.CheckModuleID, Visible = !checkInfo.HideMatch});
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+
+                //Additional validation on the checkInfo in case there was not a querystring to test against.
+                if (checkInfo.ServerSide)
+                {
+                    if (!serverSideChecks.Exists(x => x.ModuleID == checkInfo.CheckModuleID && x.Visible))
+                    {
+
+                        serverSideChecks.Add(new ValidateCheckInfo() {ModuleID = checkInfo.CheckModuleID, Visible = checkInfo.HideMatch});
+                    }
+                }
+                else
+                {
+                    if (!clientSideChecks.Exists(x => x.ModuleID == checkInfo.CheckModuleID && x.Visible))
+                    {
+                        clientSideChecks.Add(new ValidateCheckInfo() {ModuleID = checkInfo.CheckModuleID, Visible = checkInfo.HideMatch});
+                    }
+                }
+
+            }
+
             if (!IsEditable)
             {
-                List<ValidateCheckInfo> outputChecks = new List<ValidateCheckInfo>();
-                List<CheckInfo> checks = DataController.GetChecks(ModuleId);
-                foreach (CheckInfo checkInfo in checks)
+                //Hide Modules only if not an admin.
+                foreach (ValidateCheckInfo validateCheckInfo in serverSideChecks)
                 {
-                    //Need to figure out how to do regEx with a UrlDecode. qsValuecheckInfo on first where clause.
-                    //.Where(qsValuecheckInfo => Regex.IsMatch(keyValue,qsValuecheckInfo))
-                    outputChecks.AddRange(Request.QueryString.Keys.Cast<string>()
-                                                .Select(key => key + "=" + Request.QueryString[key]).SelectMany(keyValue => checkInfo.Querystring.Split(',')
-                                                .Where(qsValuecheckInfo => Regex.IsMatch(keyValue, qsValuecheckInfo))
-                                                .Where(qsValuecheckInfo => !outputChecks.Exists(x => x.ModuleID == checkInfo.CheckModuleID && x.Visible)), (keyValue, qsValuecheckInfo) => keyValue)
-                                                .Select(keyValue => new ValidateCheckInfo() {ModuleID = checkInfo.CheckModuleID, Visible = !checkInfo.HideMatch}).ToList());
-                    
-                    //If no querystring value is found that matches; just hide the module.
-                    if (!outputChecks.Exists(x => x.ModuleID == checkInfo.CheckModuleID))
+                    if (!validateCheckInfo.Visible)
                     {
-                        outputChecks.Add(new ValidateCheckInfo() {ModuleID = checkInfo.CheckModuleID, Visible = checkInfo.HideMatch});
+                        var control = ControlUtilities.FindFirstDescendent<Control>(Page, x => x.ID == "ctr" + validateCheckInfo.ModuleID.ToString());
+                        if (control != null) control.Visible = false;
                     }
                 }
 
                 //Add the QS Module to hide it. It needs to be visible server side because otherwise it won't output it's payload.
-                outputChecks.Add(new ValidateCheckInfo(){ModuleID = ModuleId, Visible = false});
-                JsonOutput = JsonExtensionsWeb.ToJson(outputChecks);
+                clientSideChecks.Add(new ValidateCheckInfo() {ModuleID = ModuleId, Visible = false});
+                JsonOutput = JsonExtensionsWeb.ToJson(clientSideChecks);
                 plConfig.Visible = false;
             }
         }
+
+
 
         /// <summary>
         /// Gets or sets the json output.
