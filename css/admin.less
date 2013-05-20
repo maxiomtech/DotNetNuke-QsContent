@@ -8,8 +8,6 @@
 }
 
 .addMenu {
-    @inputWidth: 420px;
-    @inputHeight: 24px;
     @inputColor: #4F4F4F;
 
     label {
@@ -18,23 +16,11 @@
         margin-bottom: 8px;
     }
 
-    input {
-        width: @inputWidth;
-        height: @inputHeight;
-        color: @inputColor;
-    }
-
-    select {
-        width: @inputWidth;
-        height: @inputHeight*1.5;
-        color: @inputColor;
-    }
-
     div.subText {
         font-size:11px;
         display:block !important;
-        margin-left:26em;
-        margin-top:4em;
+        margin-left:28em;
+        margin-top:3em;
     }
 }
 
@@ -63,3 +49,5 @@
         }
     }
 }
+
+.dnnFormItem td label{white-space:nowrap;text-align:left;}

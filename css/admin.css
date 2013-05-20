@@ -10,21 +10,11 @@
   font-weight: bold;
   margin-bottom: 8px;
 }
-.addMenu input {
-  width: 420px;
-  height: 24px;
-  color: #4f4f4f;
-}
-.addMenu select {
-  width: 420px;
-  height: 36px;
-  color: #4f4f4f;
-}
 .addMenu div.subText {
   font-size: 11px;
   display: block !important;
-  margin-left: 26em;
-  margin-top: 4em;
+  margin-left: 28em;
+  margin-top: 3em;
 }
 .iit-QsContent table td {
   padding: 6px 12px 6px 12px;
@@ -43,4 +33,8 @@
 }
 .iit-QsContent table tr.odd td {
   background-color: #F2F2F2;
+}
+.dnnFormItem td label {
+  white-space: nowrap;
+  text-align: left;
 }

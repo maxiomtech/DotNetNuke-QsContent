@@ -121,10 +121,10 @@ function QsAdminCtl($scope,WebService) {
         $scope.ButtonText = "Update";
     };
 
-    $scope.getModuleTitle = function(moduleId) {
+    $scope.getModuleTitle = function (moduleId) {
         var name = "";
         $scope.modules.forEach(function (o) {
-            if (o.moduleId == moduleId) {
+            if (o.ModuleId == moduleId) {
                 name = o.Name;
             }
         });
