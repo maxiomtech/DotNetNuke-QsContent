@@ -13,6 +13,10 @@ Allows you to show/hide content based on querystring values.
 
 The content is hidden by using the .DnnModule-X class. So be aware that the toggling of content is merely for cosmetic reasons and not for security.
 
+### Installation
+* Go to the [install directory](https://github.com/InspectorIT/DotNetNuke-QsContent/tree/master/install) and grab the latest version.
+* Install like any other DNN Module.
+
 ### Roadmap
 * <del>Allow for server side hide/show of content</del> Done 5/19/2013.
 * <del>Allow users to edit items. (just haven't gotten around to it yet</del> Done 5/19/2013
