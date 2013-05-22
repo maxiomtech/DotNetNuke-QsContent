@@ -14,7 +14,7 @@ Allows you to show/hide content based on querystring values.
 
 **Note:** The client side check to hide content is done by using the .DnnModule-X class. So be aware that the toggling of content is merely for cosmetic reasons and not for security. If you need security use the Server side check.
 
-**Note:** Querystring values are processed server side so you don't have to work if url contains ?test=1 OR /test/1/default.aspx
+**Note:** Querystring values are processed server side so you don't have to worry if url is formatted as ?test=1 OR /test/1/default.aspx
 
 ### Installation
 * Go to the [install directory](https://github.com/InspectorIT/DotNetNuke-QsContent/tree/master/install) and grab the latest version.
