@@ -2,7 +2,7 @@ repo_name: maxiomtech/DotNetNuke-QsContent
 report_id: e59382e7c09ee6117780ffcad54da810
 version: 0.1
 repo_type: Public
-timestamp: '2023-12-27T19:58:27+00:00'
+timestamp: '2024-01-04T14:56:12+00:00'
 requested_by: jsheely
 provider: github
 branch: master
@@ -31,6 +31,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1015/1200px-C_Sharp_wordmark.svg.png
+  detection_source_url: https://github.com/maxiomtech/DotNetNuke-QsContent
   detection_source: Repo Metadata
 - name: CSS 3
   description: The latest evolution of the Cascading Style Sheets language
@@ -40,6 +41,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/maxiomtech/DotNetNuke-QsContent
   detection_source: Repo Metadata
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -50,6 +52,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/maxiomtech/DotNetNuke-QsContent
   detection_source: Repo Metadata
 - name: ".NET"
   description: A free, cross-platform, open source developer platform for building
@@ -61,6 +64,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/1014/IoPy1dce_400x400.png
+  detection_source_url: https://github.com/maxiomtech/DotNetNuke-QsContent/blob/master/packages.config
   detection_source: packages.config
   last_updated_by: Jonathan Sheely
   last_updated_on: 2013-05-19 21:21:39.000000000 Z
@@ -72,6 +76,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/maxiomtech/DotNetNuke-QsContent
   detection_source: Repo Metadata
 - name: NuGet
   description: The package manager for .NET
@@ -81,6 +86,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Package Managers
   image_url: https://img.stackshare.io/service/2637/6I3oEOP4_400x400.jpg
+  detection_source_url: https://github.com/maxiomtech/DotNetNuke-QsContent/blob/master/packages.config
   detection_source: packages.config
   last_updated_by: Jonathan Sheely
   last_updated_on: 2013-05-19 21:21:39.000000000 Z
@@ -93,6 +99,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Integrated Development Environment
   image_url: https://img.stackshare.io/service/1451/SR2hUhQN.png
+  detection_source_url: https://github.com/maxiomtech/DotNetNuke-QsContent/blob/master/QSContent.sln
   detection_source: QSContent.sln
   last_updated_by: Jonathan Sheely
   last_updated_on: 2013-05-13 02:16:14.000000000 Z
